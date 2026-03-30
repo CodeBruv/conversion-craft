@@ -22,7 +22,7 @@ const Footer = () => (
         </a>
 
         <a
-          href="https://wa.me/YOUR_NUMBER"
+          href="https://wa.me/+2348142971640"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-secondary-foreground transition-colors"
