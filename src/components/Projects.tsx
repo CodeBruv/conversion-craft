@@ -20,7 +20,9 @@ const projects = [
   {
     name: "Elbi Homes",
     type: "Real Estate Landing Page",
+    tag: "Built for property inquiries",
     image: elbiImg,
+    hook: "Designed to help property buyers trust faster and make inquiries easily",
     problem: "Needed a clean page to present properties and build buyer trust",
     built: "Modern landing page focused on clarity and property visibility",
     context: "Real estate company based in Birmingham, England",
@@ -30,7 +32,9 @@ const projects = [
   {
     name: "SprintFlow",
     type: "SaaS Landing Page",
+    tag: "Built for product clarity",
     image: sprintflowImg,
+    hook: "Structured to explain the product clearly without overwhelming users",
     problem: "Product page confused visitors — features weren't clear",
     built: "Fast, structured SaaS page with clear messaging and feature breakdown",
     context: "Remote team collaboration tool",
@@ -40,7 +44,9 @@ const projects = [
   {
     name: "Daniel Reed",
     type: "Personal Brand Landing Page",
+    tag: "Built for lead capture",
     image: danielImg,
+    hook: "Focused on turning visitors into leads with clear messaging and CTA flow",
     problem: "No clear lead capture — visitors bounced without converting",
     built: "Focused landing page with strong messaging and clear CTA",
     context: "Productivity coach for freelancers",
@@ -50,7 +56,9 @@ const projects = [
   {
     name: "GrowthForge",
     type: "Agency Website",
+    tag: "Built for authority & trust",
     image: growthforgeImg,
+    hook: "Positioned the agency as performance-driven and results-focused",
     problem: "Website didn't position the agency as performance-driven",
     built: "Clean, professional multi-section site focused on services and results",
     context: "Digital marketing agency",
@@ -60,7 +68,9 @@ const projects = [
   {
     name: "Ava Thompson",
     type: "UX Portfolio Website",
+    tag: "Built for case study clarity",
     image: avaImg,
+    hook: "Structured to present UX work clearly and professionally",
     problem: "Portfolio lacked structure — case studies were hard to scan",
     built: "Structured portfolio with clean layouts and focused case study sections",
     context: "Mid-level UX designer",
@@ -70,7 +80,9 @@ const projects = [
   {
     name: "CookedByJulz",
     type: "Landing Page + Digital Products",
+    tag: "Built for product sales",
     image: cookedImg,
+    hook: "Simplified how visitors discover and buy digital products",
     problem: "Digital products were hard to find and confusing to buy",
     built: "Structured landing page with integrated digital product flow",
     context: "Content brand selling digital products",
@@ -89,6 +101,7 @@ const ProjectCard = ({
   onViewDetails: () => void;
 }) => (
   <div className="group bg-background rounded-xl border border-border overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+    
     {/* Thumbnail */}
     <div className="aspect-[16/10] overflow-hidden">
       <img
@@ -101,23 +114,45 @@ const ProjectCard = ({
       />
     </div>
 
-    {/* Info */}
+    {/* Content */}
     <div className="p-5">
-      <div className="mb-3">
-        <h3 className="text-base font-bold text-foreground">{project.name}</h3>
-        <p className="text-xs font-medium text-primary">{project.type}</p>
+      
+      {/* Tag */}
+      <p className="text-[11px] uppercase text-primary mb-1">
+        {project.tag}
+      </p>
+
+      {/* Title */}
+      <div className="mb-2">
+        <h3 className="text-base font-bold text-foreground">
+          {project.name}
+        </h3>
+        <p className="text-xs font-medium text-muted-foreground">
+          {project.type}
+        </p>
       </div>
 
-      <div className="space-y-1.5 text-sm text-muted-foreground mb-5">
+      {/* Hook */}
+      <p className="text-sm text-foreground mb-4 leading-relaxed">
+        {project.hook}
+      </p>
+
+      {/* Problem + Solution */}
+      <div className="space-y-2 text-sm text-muted-foreground mb-4">
         <p>
           <span className="font-semibold text-foreground/70">Problem:</span>{" "}
           {project.problem}
         </p>
         <p>
-          <span className="font-semibold text-foreground/70">Built:</span>{" "}
+          <span className="font-semibold text-foreground/70">Solution:</span>{" "}
           {project.built}
         </p>
       </div>
+
+      {/* Result */}
+      <p className="text-sm font-medium text-foreground mb-5">
+        → {project.result}
+      </p>
 
       {/* Actions */}
       <div className="flex gap-2">
@@ -127,6 +162,7 @@ const ProjectCard = ({
             Live Preview
           </a>
         </Button>
+
         <Button
           size="sm"
           variant="outline"
@@ -134,7 +170,7 @@ const ProjectCard = ({
           onClick={onViewDetails}
         >
           <Eye className="w-3.5 h-3.5" />
-          View Details
+          Case Study
         </Button>
       </div>
     </div>
@@ -147,13 +183,21 @@ const Projects = () => {
   return (
     <section id="work" className="py-20 md:py-28 bg-surface">
       <div className="container max-w-6xl">
+
+        {/* Section Header */}
         <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
           Selected Work
         </p>
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-12">
-          Real projects. Real outcomes.
+
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+          Selected Projects Built for Real Clients
         </h2>
 
+        <p className="text-muted-foreground max-w-2xl mb-12">
+          Each project focuses on clarity, performance, and guiding visitors toward action — not just design.
+        </p>
+
+        {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p) => (
             <ProjectCard
@@ -165,18 +209,26 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Details Modal */}
+      {/* Modal */}
       <Dialog open={!!selected} onOpenChange={() => setSelected(null)}>
         <DialogContent className="sm:max-w-lg">
           {selected && (
             <>
               <DialogHeader>
-                <DialogTitle className="text-xl">{selected.name}</DialogTitle>
+                <DialogTitle className="text-xl">
+                  {selected.name}
+                </DialogTitle>
                 <DialogDescription className="text-primary font-medium">
                   {selected.type}
                 </DialogDescription>
               </DialogHeader>
 
+              {/* Hook */}
+              <p className="text-sm text-muted-foreground">
+                {selected.hook}
+              </p>
+
+              {/* Image */}
               <div className="aspect-[16/10] rounded-lg overflow-hidden my-2">
                 <img
                   src={selected.image}
@@ -187,30 +239,43 @@ const Projects = () => {
                 />
               </div>
 
+              {/* Details */}
               <div className="space-y-3 text-sm">
                 <div>
                   <span className="font-semibold text-muted-foreground">Context:</span>
-                  <span className="ml-1.5 text-foreground/80">{selected.context}</span>
+                  <span className="ml-1.5 text-foreground/80">
+                    {selected.context}
+                  </span>
                 </div>
+
                 <div>
                   <span className="font-semibold text-muted-foreground">Problem:</span>
-                  <span className="ml-1.5 text-foreground/80">{selected.problem}</span>
+                  <span className="ml-1.5 text-foreground/80">
+                    {selected.problem}
+                  </span>
                 </div>
+
                 <div>
-                  <span className="font-semibold text-muted-foreground">Built:</span>
-                  <span className="ml-1.5 text-foreground/80">{selected.built}</span>
+                  <span className="font-semibold text-muted-foreground">Solution:</span>
+                  <span className="ml-1.5 text-foreground/80">
+                    {selected.built}
+                  </span>
                 </div>
-                <div className="pt-2 border-t border-border">
-                  <span className="font-semibold text-primary">Result:</span>
-                  <span className="ml-1.5 text-foreground">{selected.result}</span>
+
+                <div className="pt-3 border-t border-border">
+                  <span className="font-semibold text-primary">Outcome:</span>
+                  <p className="mt-1 text-foreground">
+                    {selected.result}
+                  </p>
                 </div>
               </div>
 
+              {/* CTA */}
               <div className="pt-2">
                 <Button className="w-full gap-2" asChild>
                   <a href={selected.liveUrl} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="w-4 h-4" />
-                    View Live Project
+                    View Live Project → See How It Works
                   </a>
                 </Button>
               </div>
