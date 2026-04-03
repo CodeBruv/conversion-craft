@@ -2,10 +2,10 @@ import { useState } from "react";
 import { ExternalLink, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import elbiImg from "@/assets/projects/elbi-homes.jpg";
-import sprintflowImg from "@/assets/projects/sprintflow.jpg";
+import elbiImg from "@/assets/projects/elbi-homes.png";
+import sprintflowImg from "@/assets/projects/sprintflow.png";
 import danielImg from "@/assets/projects/daniel-reed.jpg";
-import growthforgeImg from "@/assets/projects/growthforge.jpg";
+import growthforgeImg from "@/assets/projects/growthforge.png";
 import avaImg from "@/assets/projects/ava-thompson.jpg";
 import cookedImg from "@/assets/projects/cookedbyjulz.jpg";
 
