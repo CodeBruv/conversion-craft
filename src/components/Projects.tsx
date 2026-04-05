@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 
 import elbiImg from "@/assets/projects/elbi-homes.png";
 import sprintflowImg from "@/assets/projects/sprintflow.png";
-import danielImg from "@/assets/projects/daniel-reed.jpg";
+import danielImg from "@/assets/projects/daniel-reed.png";
 import growthforgeImg from "@/assets/projects/growthforge.png";
-import avaImg from "@/assets/projects/ava-thompson.jpg";
-import cookedImg from "@/assets/projects/cookedbyjulz.jpg";
+import avaImg from "@/assets/projects/ava-thompson.png";
+import cookedImg from "@/assets/projects/cookedbyjulz.png";
 
 const WHATSAPP_NUMBER = "+2348142971640";
 
