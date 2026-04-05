@@ -76,7 +76,7 @@ const projects = [
     built: "Structured landing page with product system",
     context: "Content brand",
     result: "Clearer product positioning and flow",
-    liveUrl: "#",
+    liveUrl: "http://cookedbyjulz.com.ng/",
   },
 ];
 
