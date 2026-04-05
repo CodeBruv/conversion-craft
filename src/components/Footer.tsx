@@ -31,7 +31,7 @@ const Footer = () => (
         </a>
 
         <a
-          href="https://www.upwork.com/"
+          href="https://www.upwork.com/freelancers/~01766671346b3f61bd"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-secondary-foreground transition-colors"
