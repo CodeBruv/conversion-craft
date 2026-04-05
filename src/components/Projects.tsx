@@ -21,7 +21,7 @@ const projects = [
     built: "Modern landing page focused on clarity and property visibility",
     context: "Real estate company based in Birmingham, England",
     result: "Improved presentation and clearer user flow for inquiries",
-    liveUrl: "#",
+    liveUrl: "https://elbi-homes.netlify.app/",
   },
   {
     name: "SprintFlow",
