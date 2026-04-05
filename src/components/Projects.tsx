@@ -32,7 +32,7 @@ const projects = [
     built: "Fast SaaS page with clear messaging and feature breakdown",
     context: "Remote team collaboration tool",
     result: "Better product understanding and improved signup flow",
-    liveUrl: "#",
+    liveUrl: "https://sprint-flow.netlify.app/",
   },
   {
     name: "Daniel Reed",
