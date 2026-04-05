@@ -43,7 +43,7 @@ const projects = [
     built: "Focused landing page with strong CTA",
     context: "Productivity coach",
     result: "Improved lead capture and clarity",
-    liveUrl: "#",
+    liveUrl: "https://reed-s-focus-system.netlify.app/",
   },
   {
     name: "GrowthForge",
