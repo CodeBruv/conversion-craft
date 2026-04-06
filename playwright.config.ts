@@ -1,6 +1,6 @@
-import { createCodeBruvConfig } from "CodeBruv-agent-playwright-config/config";
+import { createcodebruvConfig } from "codebruv-agent-playwright-config/config";
 
-export default createCodeBruvConfig({
+export default createcodebruvConfig({
   // Add your custom playwright configuration overrides here
   // Example:
   // timeout: 60000,
