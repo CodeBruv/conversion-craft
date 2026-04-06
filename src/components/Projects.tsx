@@ -54,7 +54,7 @@ const projects = [
     built: "Professional multi-section site",
     context: "Digital marketing agency",
     result: "Stronger credibility and trust",
-    liveUrl: "#",
+    liveUrl: "https://growthforge-agency.netlify.app/",
   },
   {
     name: "Ava Thompson",
