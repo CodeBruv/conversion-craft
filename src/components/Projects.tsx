@@ -65,7 +65,7 @@ const projects = [
     built: "Clean case study-focused portfolio",
     context: "UX designer",
     result: "Improved presentation and professionalism",
-    liveUrl: "#",
+    liveUrl: "https://ava-thompson.netlify.app/",
   },
   {
     name: "CookedByJulz",
