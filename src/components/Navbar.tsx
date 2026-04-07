@@ -8,6 +8,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link
           to="/"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="font-semibold tracking-tight text-sm md:text-base text-secondary-foreground/80 hover:text-white transition-colors"
         >
           Code Bruv
