@@ -5,11 +5,11 @@ const Hero = () => (
     <div className="container max-w-4xl py-20 md:py-32">
       
       <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6">
-        Landing Pages That Make You Look Credible And Turn Visitors Into Clients
+        Websites That Make You Look Credible And Turn Visitors Into Clients
       </h1>
 
       <p className="text-lg md:text-xl text-secondary-foreground/70 max-w-2xl mb-10 leading-relaxed">
-        Not just clean design. I build fast, structured websites that guide people, build trust quickly, and push them to take action.
+        I design landing pages, portfolios, and product websites that remove confusion, build trust fast, and guide people to take action. Clean structure, clear messaging, and no wasted sections.
       </p>
 
       <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -31,12 +31,12 @@ const Hero = () => (
 
       {/* Trust Signal */}
       <p className="text-sm text-secondary-foreground/60 mb-4">
-        Used by SaaS teams, real estate brands, and personal businesses
+        Used by SaaS products, personal brands, and growing businesses
       </p>
 
       {/* Proof Line */}
       <p className="text-sm text-secondary-foreground/40">
-        Fast turnaround (3–7 days) · Built for conversions · Clean, scalable code
+        Fast turnaround (3–7 days) · Conversion-focused · Clean, scalable builds
       </p>
 
     </div>
