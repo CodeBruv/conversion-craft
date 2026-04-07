@@ -16,66 +16,66 @@ const projects = [
     name: "Elbi Homes",
     type: "Real Estate Landing Page",
     image: elbiImg,
-    hook: "Built to help buyers trust quickly and take action without hesitation",
-    problem: "Property listings lacked structure and didn’t build enough trust to drive inquiries",
-    built: "A clean, conversion-focused landing page that highlights properties clearly and guides users toward inquiry",
+    hook: "Built to remove hesitation and make property inquiries feel easy and natural",
+    problem: "Listings were scattered and didn’t build enough trust to convert visitors into inquiries",
+    built: "A structured landing page that presents properties clearly and guides users step-by-step toward contacting the business",
     context: "Real estate company based in Birmingham, England",
-    result: "Stronger trust signals and a smoother path from browsing to inquiry",
+    result: "Stronger trust, clearer navigation, and more confident inquiry flow",
     liveUrl: "https://elbi-homes.netlify.app/",
   },
   {
     name: "SprintFlow",
     type: "SaaS Landing Page",
     image: sprintflowImg,
-    hook: "Designed to explain the product in seconds without overwhelming the user",
-    problem: "Visitors struggled to understand the product due to unclear messaging and feature overload",
-    built: "A fast, structured SaaS landing page with clear sections, focused messaging, and simplified feature breakdown",
+    hook: "Designed to make the product clear within seconds of landing",
+    problem: "Users were confused by too many features and unclear messaging",
+    built: "A simplified SaaS landing page with focused sections, clean hierarchy, and clear product explanation",
     context: "Remote team collaboration tool",
-    result: "Improved clarity, making it easier for users to understand and move toward signup",
+    result: "Better clarity and smoother path toward signup decisions",
     liveUrl: "https://sprint-flow.netlify.app/",
   },
   {
     name: "Daniel Reed",
     type: "Personal Brand Landing Page",
     image: danielImg,
-    hook: "Focused on turning attention into action with direct, conversion-driven messaging",
-    problem: "The brand lacked a clear path for capturing leads, causing visitors to leave without taking action",
-    built: "A focused landing page with strong positioning, clear value, and a single, direct call-to-action",
+    hook: "Focused on turning attention into action instead of passive scrolling",
+    problem: "Visitors had no clear next step, leading to lost leads",
+    built: "A direct, conversion-focused page with strong positioning and a single clear call-to-action",
     context: "Productivity coach",
-    result: "Higher clarity and a stronger flow toward lead capture",
+    result: "Stronger lead capture flow and clearer user direction",
     liveUrl: "https://reed-s-focus-system.netlify.app/",
   },
   {
     name: "GrowthForge",
     type: "Agency Website",
     image: growthforgeImg,
-    hook: "Positioned the agency as performance-driven and results-focused from first glance",
-    problem: "Weak positioning made it hard to build trust or stand out in a competitive market",
-    built: "A structured multi-section website that communicates authority, services, and outcomes clearly",
+    hook: "Positioned to feel credible and performance-driven from the first scroll",
+    problem: "Weak positioning made the agency blend in with competitors",
+    built: "A structured website that clearly communicates services, authority, and outcomes",
     context: "Digital marketing agency",
-    result: "Stronger credibility and a more confident brand presence",
+    result: "More confident brand presence and stronger perceived value",
     liveUrl: "https://growthforge-agency.netlify.app/",
   },
   {
     name: "Ava Thompson",
     type: "UX Portfolio Website",
     image: avaImg,
-    hook: "Structured to present case studies in a way that feels clear, intentional, and easy to follow",
-    problem: "The portfolio lacked structure, making the work feel scattered and harder to evaluate",
-    built: "A clean, case study-driven portfolio with clear storytelling and visual hierarchy",
+    hook: "Designed to make case studies easy to understand and evaluate quickly",
+    problem: "Work felt scattered and lacked clear storytelling",
+    built: "A clean, structured portfolio focused on clarity, hierarchy, and flow",
     context: "UX designer",
-    result: "More professional presentation and easier understanding of the designer’s process",
+    result: "More professional presentation and easier decision-making for recruiters",
     liveUrl: "https://ava-thompson.netlify.app/",
   },
   {
     name: "CookedByJulz",
     type: "Landing Page",
     image: cookedImg,
-    hook: "Designed to remove the mental load of content creation through a clear, repeatable system",
-    problem: "Content creation felt inconsistent and overwhelming without a clear structure for ideas and execution",
-    built: "A personalized content system built on clarity, planning, and repeatability so hooks, topics, and captions are defined once and reused consistently",
+    hook: "Built to simplify content creation into a clear, repeatable system",
+    problem: "Content felt inconsistent and difficult to maintain long-term",
+    built: "A structured system that organizes ideas, hooks, and execution into a repeatable workflow",
     context: "Content brand",
-    result: "Clearer product positioning and a structured system that makes content creation easier to maintain",
+    result: "Clearer positioning and easier long-term content consistency",
     liveUrl: "http://cookedbyjulz.com.ng/",
   },
 ];
@@ -91,7 +91,6 @@ const Projects = () => {
     )}`;
   };
 
-  // ✅ CASE STUDY VIEW
   if (selected) {
     return (
       <section className="min-h-screen bg-background py-16">
@@ -117,7 +116,7 @@ const Projects = () => {
 
           <p className="text-lg mb-6">{selected.hook}</p>
 
-          <div className="space-y-5 text-sm">
+          <div className="space-y-6 text-sm">
             <div>
               <h3 className="font-semibold text-muted-foreground">Context</h3>
               <p>{selected.context}</p>
@@ -129,7 +128,7 @@ const Projects = () => {
             </div>
 
             <div>
-              <h3 className="font-semibold text-muted-foreground">Solution</h3>
+              <h3 className="font-semibold text-muted-foreground">What I Built</h3>
               <p>{selected.built}</p>
             </div>
 
@@ -149,7 +148,7 @@ const Projects = () => {
 
             <Button variant="outline" className="w-full" asChild>
               <a href={getWhatsAppLink(selected)} target="_blank">
-                Build Something Like This
+                I Want Something Like This
               </a>
             </Button>
           </div>
@@ -158,25 +157,31 @@ const Projects = () => {
     );
   }
 
-  // ✅ GRID VIEW
   return (
     <section id="work" className="py-20 md:py-28 bg-surface">
       <div className="container max-w-6xl">
 
-        <h2 className="text-2xl md:text-3xl font-bold mb-12">
-          Selected Projects
+        <h2 className="text-2xl md:text-3xl font-bold mb-4">
+          Selected Work, Including Concept Builds.
         </h2>
+
+        <p className="text-muted-foreground max-w-2xl mb-12">
+          Each project is designed with the goal to make it easy for visitors to understand, trust, and take action.
+        </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p) => (
             <div
               key={p.name}
               onClick={() => setSelected(p)}
-              className="cursor-pointer bg-background border rounded-xl overflow-hidden hover:shadow-lg transition"
+              className="cursor-pointer bg-background border rounded-xl overflow-hidden hover:shadow-lg transition group"
             >
               <img src={p.image} className="w-full h-48 object-cover" />
+              
               <div className="p-4">
-                <h3 className="font-bold">{p.name}</h3>
+                <h3 className="font-bold mb-1 group-hover:text-primary transition">
+                  {p.name}
+                </h3>
                 <p className="text-sm text-muted-foreground">{p.type}</p>
               </div>
             </div>

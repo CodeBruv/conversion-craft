@@ -23,7 +23,7 @@ const FinalCTA = () => {
 
   const generateWhatsAppMessage = () => {
     return encodeURIComponent(
-      `Hi, I saw your portfolio.\n\n` +
+      `Hi, I saw your website.\n\n` +
       `Name: ${form.name}\n` +
       `Email: ${form.email}\n` +
       `Project Type: ${form.projectType}\n` +
@@ -51,7 +51,6 @@ const FinalCTA = () => {
 
       setStatus("success");
 
-      // 🔥 WhatsApp redirect
       const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${generateWhatsAppMessage()}`;
       window.open(whatsappUrl, "_blank");
 
@@ -74,12 +73,17 @@ const FinalCTA = () => {
       className="py-20 md:py-28 bg-secondary text-secondary-foreground"
     >
       <div className="container max-w-3xl text-center">
+
         <h2 className="text-2xl md:text-4xl font-bold mb-4">
-          Let’s Build Something That Actually Converts
+          Have Something in Mind? Let’s Build It Properly.
         </h2>
 
-        <p className="text-secondary-foreground/70 text-lg mb-10 max-w-xl mx-auto">
-          Tell me what you're building. I’ll help you structure it, build it fast, and make sure it performs.
+        <p className="text-secondary-foreground/70 text-lg mb-6 max-w-xl mx-auto">
+          Tell me what you're trying to build. I’ll help you structure it, design it clean, and get it live fast.
+        </p>
+
+        <p className="text-sm text-secondary-foreground/50 mb-10">
+          Usually delivered within 3–7 days · Simple process · No unnecessary back and forth
         </p>
 
         <form
@@ -157,7 +161,7 @@ const FinalCTA = () => {
                 </>
               ) : (
                 <>
-                  Send & Continue to WhatsApp
+                  Send Details & Continue on WhatsApp
                   <ArrowRight className="w-4 h-4" />
                 </>
               )}

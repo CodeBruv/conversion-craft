@@ -4,17 +4,17 @@ const services = [
   {
     icon: MousePointerClick,
     title: "Landing Pages",
-    desc: "Structured to guide visitors from first impression to action; clear messaging, fast load, and zero confusion.",
+    desc: "Built to guide visitors from first click to action. Clear messaging, strong structure, and zero guesswork.",
   },
   {
     icon: Layers3,
     title: "Portfolio Websites",
-    desc: "Designed to make your work easy to understand, easy to trust, and easy to say yes to.",
+    desc: "Turn your work into something people instantly understand, trust, and want to hire.",
   },
   {
     icon: Rocket,
     title: "Performance Optimization",
-    desc: "Lightweight builds that load instantly, feel smooth, and score strong across performance and SEO.",
+    desc: "Fast, lightweight builds that load instantly, feel smooth, and perform well across devices and search.",
   },
 ];
 
@@ -23,16 +23,16 @@ const Services = () => (
     <div className="container max-w-4xl">
       
       <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-        What I Actually Help You Do
+        What You Actually Get
       </p>
 
       <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-        I build not just websites, but systems that bring in clients.
+        Websites that don’t just sit there, they guide people and bring in clients.
       </h2>
 
       <p className="text-muted-foreground max-w-2xl mb-12">
-        Every build is focused on one thing: making sure your website looks credible,
-        communicates clearly, and pushes visitors toward taking action.
+        Every project is built with a clear goal: make your business look credible, 
+        communicate fast, and move visitors toward taking action without confusion.
       </p>
 
       <div className="grid md:grid-cols-3 gap-8">

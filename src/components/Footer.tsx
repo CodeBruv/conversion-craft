@@ -8,14 +8,14 @@ const Footer = () => (
           Code Bruv Technologies Ltd
         </p>
         <p className="text-xs text-secondary-foreground/40">
-          Fast, conversion-focused web builds
+          Clean websites. Built to convert.
         </p>
       </div>
 
       {/* Right */}
       <div className="flex flex-wrap items-center justify-center gap-6">
         <a
-          href="mailto:hello@codebruv.com"
+          href="mailto:codebruvtech@gmail.com"
           className="hover:text-secondary-foreground transition-colors"
         >
           Email
@@ -41,7 +41,6 @@ const Footer = () => (
       </div>
     </div>
 
-    {/* Bottom strip */}
     <div className="mt-6 text-center text-xs text-secondary-foreground/30">
       © {new Date().getFullYear()} Code Bruv Technologies Ltd. All rights reserved.
     </div>

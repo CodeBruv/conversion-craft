@@ -9,28 +9,28 @@ import {
 const steps = [
   {
     icon: Compass,
-    title: "Discovery",
-    desc: "We define your goal, your audience, and what the website needs to achieve.",
+    title: "Define",
+    desc: "We get clear on your goal, your audience, and what the site needs to achieve.",
   },
   {
     icon: LayoutDashboard,
     title: "Structure",
-    desc: "I map a clean layout focused on clarity, flow, and conversion.",
+    desc: "I map a layout that’s simple, clear, and built to guide action.",
   },
   {
     icon: Code2,
     title: "Build",
-    desc: "Fast, responsive development with performance as a priority.",
+    desc: "Fast, responsive development with performance and usability in mind.",
   },
   {
     icon: SlidersHorizontal,
     title: "Refine",
-    desc: "Testing across devices, improving speed, tightening the experience.",
+    desc: "We test, adjust, and tighten everything so it feels smooth and intentional.",
   },
   {
     icon: CheckCircle2,
     title: "Launch",
-    desc: "You get a polished site that’s ready to perform from day one.",
+    desc: "You get a polished site that’s ready to go live and start working.",
   },
 ];
 
@@ -39,16 +39,16 @@ const Process = () => (
     <div className="container max-w-4xl">
       
       <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-        How Projects Actually Get Done
+        Simple Process
       </p>
 
       <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-        Clear process. Fast execution. No back and forth.
+        Clear steps. Fast turnaround. No confusion.
       </h2>
 
       <p className="text-muted-foreground max-w-2xl mb-12">
-        You’re not guessing what happens next. Each step is structured so your project
-        moves forward smoothly without delays or confusion.
+        You always know what’s happening next. The process is structured to keep things moving 
+        without delays, overthinking, or endless revisions.
       </p>
 
       <div className="grid md:grid-cols-5 gap-6">

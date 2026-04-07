@@ -10,27 +10,27 @@ const points = [
   {
     icon: Timer,
     title: "Fast Turnaround",
-    desc: "Most projects are completed within 3–7 days without sacrificing quality.",
+    desc: "Most projects go live within 3–7 days without dragging things out.",
   },
   {
     icon: Braces,
-    title: "Clean Builds",
-    desc: "Well-structured code that’s easy to maintain and expand later.",
+    title: "Clean, Scalable Code",
+    desc: "Built properly from the start so you’re not stuck fixing things later.",
   },
   {
     icon: Smartphone,
-    title: "Responsive by Default",
-    desc: "Your site works smoothly across mobile, tablet, and desktop.",
+    title: "Works Everywhere",
+    desc: "Your site looks and feels right on mobile, tablet, and desktop.",
   },
   {
     icon: Activity,
-    title: "Performance First",
-    desc: "Built to load fast and pass key performance benchmarks.",
+    title: "Built for Performance",
+    desc: "Fast load times, smooth interaction, and strong technical foundation.",
   },
   {
     icon: MessageCircle,
-    title: "Clear Communication",
-    desc: "You always know what’s happening and what comes next.",
+    title: "No Confusion",
+    desc: "Clear communication, clear direction, and no unnecessary back and forth.",
   },
 ];
 
@@ -39,16 +39,16 @@ const WhyMe = () => (
     <div className="container max-w-4xl">
       
       <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-        Why This Works
+        Why Work With Me
       </p>
 
       <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-        You don’t just get a website. You get clarity.
+        This is built to be simple, fast, and actually useful.
       </h2>
 
       <p className="text-muted-foreground max-w-2xl mb-10">
-        Most websites fail because they’re slow, unclear, or trying to do too much.
-        I focus on keeping things simple, fast, and structured so your visitors know exactly what to do.
+        Most websites look fine but don’t do anything. They’re slow, unclear, or overloaded.
+        I keep things focused so your visitors understand quickly and take action without hesitation.
       </p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
