@@ -5,7 +5,7 @@ const Hero = () => (
     <div className="container max-w-4xl py-20 md:py-32">
       
       <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6">
-        Landing Pages That Make You Look Credible, And Turn Visitors Into Clients
+        Landing Pages That Make You Look Credible And Turn Visitors Into Clients
       </h1>
 
       <p className="text-lg md:text-xl text-secondary-foreground/70 max-w-2xl mb-10 leading-relaxed">
