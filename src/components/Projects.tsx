@@ -84,30 +84,41 @@ type Project = (typeof projects)[number];
 
 const Projects = () => {
   const [selected, setSelected] = useState<Project | null>(null);
-  const scrollPosition = useRef(0);
+  const [fade, setFade] = useState(true);
+  const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const lastClickedRef = useRef<HTMLDivElement | null>(null);
+  const detailRef = useRef<HTMLDivElement | null>(null);
 
   const getWhatsAppLink = (project: Project) =>
     `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
       `Hi, I saw your ${project.name} project.\n\nI want something similar.`
     )}`;
 
+  // Scroll the detail view into position at the top of the project card
   useEffect(() => {
-    if (selected) {
-      window.scrollTo({ top: 0, behavior: "instant" });
+    if (selected && detailRef.current) {
+      detailRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, [selected]);
 
+  const handleBack = () => {
+    setFade(false);
+    setTimeout(() => {
+      setSelected(null);
+      lastClickedRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      setFade(true);
+    }, 200); // fade duration
+  };
+
   if (selected) {
     return (
-      <section className="min-h-screen bg-background py-16">
+      <section
+        ref={detailRef}
+        className={`min-h-screen bg-background py-16 transition-opacity duration-200 ${fade ? "opacity-100" : "opacity-0"}`}
+      >
         <div className="container max-w-3xl">
           <button
-            onClick={() => {
-              setSelected(null);
-              setTimeout(() => {
-                window.scrollTo({ top: scrollPosition.current, behavior: "instant" });
-              }, 0);
-            }}
+            onClick={handleBack}
             className="flex items-center gap-2 text-sm mb-6 text-muted-foreground hover:text-foreground"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -128,17 +139,14 @@ const Projects = () => {
               <h3 className="font-semibold text-muted-foreground">Context</h3>
               <p>{selected.context}</p>
             </div>
-
             <div>
               <h3 className="font-semibold text-muted-foreground">Problem</h3>
               <p>{selected.problem}</p>
             </div>
-
             <div>
               <h3 className="font-semibold text-muted-foreground">What I Built</h3>
               <p>{selected.built}</p>
             </div>
-
             <div>
               <h3 className="font-semibold text-primary">Outcome</h3>
               <p>{selected.result}</p>
@@ -179,14 +187,15 @@ const Projects = () => {
           {projects.map((p) => (
             <div
               key={p.name}
+              ref={(el) => (cardRefs.current[p.name] = el)}
               onClick={() => {
-                scrollPosition.current = window.scrollY;
+                lastClickedRef.current = cardRefs.current[p.name];
                 setSelected(p);
+                setFade(true);
               }}
               className="cursor-pointer bg-background border rounded-xl overflow-hidden hover:shadow-lg transition group"
             >
               <img src={p.image} className="w-full h-48 object-cover" />
-
               <div className="p-4">
                 <h3 className="font-bold mb-1 group-hover:text-primary transition">{p.name}</h3>
                 <p className="text-sm text-muted-foreground">{p.type}</p>
