@@ -88,92 +88,57 @@ const Projects = () => {
   const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const lastClickedRef = useRef<HTMLDivElement | null>(null);
   const detailRef = useRef<HTMLDivElement | null>(null);
+  const workSectionRef = useRef<HTMLDivElement | null>(null);
 
   const getWhatsAppLink = (project: Project) =>
     `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
       `Hi, I saw your ${project.name} project.\n\nI want something similar.`
     )}`;
 
-  // Scroll the detail view into position at the top of the project card
+  // Scroll detail into view when opening a project
   useEffect(() => {
     if (selected && detailRef.current) {
       detailRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, [selected]);
 
+  // Back button scrolls to last clicked card with smooth animation
   const handleBack = () => {
     setFade(false);
     setTimeout(() => {
       setSelected(null);
-      lastClickedRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (lastClickedRef.current) {
+        const rect = lastClickedRef.current.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const top = rect.top + scrollTop - 100; // offset for navbar
+        window.scrollTo({ top, behavior: "smooth" });
+      }
       setFade(true);
-    }, 200); // fade duration
+    }, 200);
   };
 
-  if (selected) {
-    return (
-      <section
-        ref={detailRef}
-        className={`min-h-screen bg-background py-16 transition-opacity duration-200 ${fade ? "opacity-100" : "opacity-0"}`}
-      >
-        <div className="container max-w-3xl">
-          <button
-            onClick={handleBack}
-            className="flex items-center gap-2 text-sm mb-6 text-muted-foreground hover:text-foreground"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to projects
-          </button>
-
-          <h1 className="text-2xl md:text-3xl font-bold mb-2">{selected.name}</h1>
-          <p className="text-primary mb-6">{selected.type}</p>
-
-          <div className="aspect-[16/10] rounded-lg overflow-hidden mb-6">
-            <img src={selected.image} className="w-full h-full object-cover" />
-          </div>
-
-          <p className="text-lg mb-6">{selected.hook}</p>
-
-          <div className="space-y-6 text-sm">
-            <div>
-              <h3 className="font-semibold text-muted-foreground">Context</h3>
-              <p>{selected.context}</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-muted-foreground">Problem</h3>
-              <p>{selected.problem}</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-muted-foreground">What I Built</h3>
-              <p>{selected.built}</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-primary">Outcome</h3>
-              <p>{selected.result}</p>
-            </div>
-          </div>
-
-          <div className="mt-10 space-y-3">
-            <Button className="w-full" asChild>
-              <a href={selected.liveUrl} target="_blank">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                View Live Project
-              </a>
-            </Button>
-
-            <Button variant="outline" className="w-full" asChild>
-              <a href={getWhatsAppLink(selected)} target="_blank">
-                I Want Something Like This
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
-    );
-  }
+  // Close project if user clicks on a nav link
+  useEffect(() => {
+    const handleNavClick = (e: Event) => {
+      const target = e.target as HTMLElement;
+      const navLink = target.closest("nav a");
+      if (selected && navLink) {
+        setSelected(null);
+        const href = navLink.getAttribute("href");
+        if (href === "#work" && workSectionRef.current) {
+          const rect = workSectionRef.current.getBoundingClientRect();
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const top = rect.top + scrollTop - 100; // offset for navbar
+          window.scrollTo({ top, behavior: "smooth" });
+        }
+      }
+    };
+    document.addEventListener("click", handleNavClick);
+    return () => document.removeEventListener("click", handleNavClick);
+  }, [selected]);
 
   return (
-    <section id="work" className="py-20 md:py-28 bg-surface">
+    <section id="work" ref={workSectionRef} className="py-20 md:py-28 bg-surface">
       <div className="container max-w-6xl">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">
           Selected Work, Including Concept Builds.
@@ -189,7 +154,7 @@ const Projects = () => {
               key={p.name}
               ref={(el) => (cardRefs.current[p.name] = el)}
               onClick={() => {
-                lastClickedRef.current = cardRefs.current[p.name];
+                lastClickedRef.current = cardRefs.current[p.name]; // Always set last clicked
                 setSelected(p);
                 setFade(true);
               }}
@@ -203,9 +168,68 @@ const Projects = () => {
             </div>
           ))}
         </div>
+
+        {selected && (
+          <section
+            ref={detailRef}
+            className={`min-h-screen bg-background py-16 transition-opacity duration-200 ${fade ? "opacity-100" : "opacity-0"}`}
+          >
+            <div className="container max-w-3xl">
+              <button
+                onClick={handleBack}
+                className="flex items-center gap-2 text-sm mb-6 text-muted-foreground hover:text-foreground"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Back to projects
+              </button>
+
+              <h1 className="text-2xl md:text-3xl font-bold mb-2">{selected.name}</h1>
+              <p className="text-primary mb-6">{selected.type}</p>
+
+              <div className="aspect-[16/10] rounded-lg overflow-hidden mb-6">
+                <img src={selected.image} className="w-full h-full object-cover" />
+              </div>
+
+              <p className="text-lg mb-6">{selected.hook}</p>
+
+              <div className="space-y-6 text-sm">
+                <div>
+                  <h3 className="font-semibold text-muted-foreground">Context</h3>
+                  <p>{selected.context}</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-muted-foreground">Problem</h3>
+                  <p>{selected.problem}</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-muted-foreground">What I Built</h3>
+                  <p>{selected.built}</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-primary">Outcome</h3>
+                  <p>{selected.result}</p>
+                </div>
+              </div>
+
+              <div className="mt-10 space-y-3">
+                <Button className="w-full" asChild>
+                  <a href={selected.liveUrl} target="_blank">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    View Live Project
+                  </a>
+                </Button>
+                <Button variant="outline" className="w-full" asChild>
+                  <a href={getWhatsAppLink(selected)} target="_blank">
+                    I Want Something Like This
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </section>
+        )}
       </div>
     </section>
   );
 };
 
-export default Projects
+export default Projects;
