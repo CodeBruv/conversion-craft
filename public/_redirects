@@ -1,0 +1,9 @@
+# Single-page application fallback.
+#
+# /projects/:slug and /admin are client-side routes with no matching file on
+# disk. Without this rule a visitor who opens or refreshes a project URL, or
+# follows a shared link, gets the host's 404 instead of the app.
+#
+# Status 200 (not 301) so the URL is preserved and search engines index the
+# project page rather than a redirect.
+/*    /index.html   200
