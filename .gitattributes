@@ -1,0 +1,8 @@
+# Project content files are written by the local editor (src/content/serialize.ts)
+# and re-read byte for byte by src/content/serialize.test.ts. Pinning them to LF
+# on every platform is what keeps that check meaningful, and keeps a save on
+# Windows from differing from the same save on Linux.
+#
+# Deliberately scoped to the content directory: the rest of the repository keeps
+# whatever line endings it already has.
+src/content/projects/*.md text eol=lf
