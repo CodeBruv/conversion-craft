@@ -8,7 +8,10 @@ export default defineConfig({
     environment: "jsdom",
     globals: true,
     setupFiles: ["./src/test/setup.ts"],
-    include: ["src/**/*.{test,spec}.{ts,tsx}"],
+    // src/** is the application. vite/** is the dev-only content writer, whose
+    // guards sit between the browser and the filesystem and are worth testing
+    // directly.
+    include: ["src/**/*.{test,spec}.{ts,tsx}", "vite/**/*.{test,spec}.ts"],
   },
   resolve: {
     alias: { "@": path.resolve(__dirname, "./src") },
