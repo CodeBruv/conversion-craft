@@ -15,7 +15,7 @@ const Hero = () => (
         <p className="text-lg md:text-xl text-secondary-foreground/70 max-w-2xl mb-10 leading-relaxed">
           I build production web applications and interfaces with React,
           Next.js, TypeScript, and modern web technologies. I care about the
-          details that make products feel good to use — responsive behavior,
+          details that make products feel good to use, responsive behavior,
           accessibility, performance, and reliable application state.
         </p>
 
