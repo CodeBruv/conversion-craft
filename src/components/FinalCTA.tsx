@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Loader2 } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Loader2 } from "lucide-react";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xgopkbro";
 const WHATSAPP_NUMBER = "+2348142971640";
@@ -9,26 +9,24 @@ const FinalCTA = () => {
     name: "",
     email: "",
     message: "",
-    projectType: "",
-    budget: "",
   });
 
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const generateWhatsAppMessage = () => {
     return encodeURIComponent(
-      `Hi, I saw your website.\n\n` +
-      `Name: ${form.name}\n` +
-      `Email: ${form.email}\n` +
-      `Project Type: ${form.projectType}\n` +
-      `Budget: ${form.budget}\n\n` +
-      `Project Details:\n${form.message}`
+      `Hi Abdulmajid,\n\n` +
+        `Name: ${form.name}\n` +
+        `Email: ${form.email}\n\n` +
+        `Message:\n${form.message}`
     );
   };
 
@@ -37,7 +35,7 @@ const FinalCTA = () => {
     setStatus("loading");
 
     try {
-      await fetch(FORMSPREE_ENDPOINT, {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -49,6 +47,10 @@ const FinalCTA = () => {
         }),
       });
 
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
       setStatus("success");
 
       const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${generateWhatsAppMessage()}`;
@@ -58,10 +60,7 @@ const FinalCTA = () => {
         name: "",
         email: "",
         message: "",
-        projectType: "",
-        budget: "",
       });
-
     } catch {
       setStatus("error");
     }
@@ -72,102 +71,125 @@ const FinalCTA = () => {
       id="contact"
       className="py-20 md:py-28 bg-secondary text-secondary-foreground"
     >
-      <div className="container max-w-3xl text-center">
+      <div className="container max-w-4xl">
+        <div className="max-w-2xl mb-10">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+            Get In Touch
+          </p>
 
-        <h2 className="text-2xl md:text-4xl font-bold mb-4">
-          Have Something in Mind? Let’s Build It Properly.
-        </h2>
+          <h2 className="text-2xl md:text-4xl font-bold mb-4">
+            Have a product, interface, or problem worth building?
+          </h2>
 
-        <p className="text-secondary-foreground/70 text-lg mb-6 max-w-xl mx-auto">
-          Tell me what you're trying to build. I’ll help you structure it, design it clean, and get it live fast.
-        </p>
+          <p className="text-secondary-foreground/70 text-lg leading-relaxed">
+            I’m open to frontend engineering opportunities, product
+            collaborations, and selected development projects involving React,
+            Next.js, and TypeScript.
+          </p>
+        </div>
 
-        <p className="text-sm text-secondary-foreground/50 mb-10">
-          Usually delivered within 3–7 days · Simple process · No unnecessary back and forth
-        </p>
+        <div className="grid md:grid-cols-[1fr_1.4fr] gap-8 items-start">
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold mb-2">What I'm looking for</h3>
 
-        <form
-          onSubmit={handleSubmit}
-          className="bg-background border border-border rounded-xl p-6 mb-8 text-left"
-        >
-          <div className="grid gap-4">
+              <p className="text-sm text-secondary-foreground/60 leading-relaxed">
+                Remote frontend engineering work where I can contribute to real
+                products, work with a strong team, and continue growing through
+                meaningful engineering problems.
+              </p>
+            </div>
 
-            <input
-              type="text"
-              name="name"
-              placeholder="Your name"
-              value={form.name}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 rounded-lg border border-border bg-background text-sm text-foreground"
-            />
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="https://github.com/CodeBruv"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
+              >
+                <Github className="w-4 h-4" />
+                GitHub
+              </a>
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Your email"
-              value={form.email}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 rounded-lg border border-border bg-background text-sm text-foreground"
-            />
-
-            <select
-              name="projectType"
-              value={form.projectType}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 rounded-lg border border-border bg-background text-sm text-foreground"
-            >
-              <option value="" disabled hidden>What do you need?</option>
-              <option value="Landing Page">Landing Page</option>
-              <option value="Portfolio Website">Portfolio Website</option>
-              <option value="Website Redesign">Website Redesign</option>
-            </select>
-
-            <select
-              name="budget"
-              value={form.budget}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 rounded-lg border border-border bg-background text-sm text-foreground"
-            >
-              <option value="" disabled hidden>Estimated budget?</option>
-              <option value="$100 - $300">$100 - $300</option>
-              <option value="$300 - $700">$300 - $700</option>
-              <option value="$700 - $1500">$700 - $1500</option>
-              <option value="$1500+">$1500+</option>
-            </select>
-
-            <textarea
-              name="message"
-              placeholder="Briefly describe your project..."
-              rows={4}
-              value={form.message}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 rounded-lg border border-border bg-background text-sm resize-none text-foreground"
-            />
-
-            <button
-              type="submit"
-              disabled={status === "loading"}
-              className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3.5 rounded-lg font-semibold mt-2"
-            >
-              {status === "loading" ? (
-                <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  Sending...
-                </>
-              ) : (
-                <>
-                  Send Details & Continue on WhatsApp
-                  <ArrowRight className="w-4 h-4" />
-                </>
-              )}
-            </button>
+              <a
+                href="https://www.linkedin.com/in/abdulmajid-abubakar-hussain-313311138"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
+              >
+                <Linkedin className="w-4 h-4" />
+                LinkedIn
+              </a>
+            </div>
           </div>
-        </form>
+
+          <form
+            onSubmit={handleSubmit}
+            className="bg-background border border-border rounded-xl p-6 text-left"
+          >
+            <div className="grid gap-4">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                value={form.name}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-border bg-background text-sm text-foreground"
+              />
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Your email"
+                value={form.email}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-border bg-background text-sm text-foreground"
+              />
+
+              <textarea
+                name="message"
+                placeholder="Tell me a little about the role, product, or project..."
+                rows={5}
+                value={form.message}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-border bg-background text-sm resize-none text-foreground"
+              />
+
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3.5 rounded-lg font-semibold mt-2 hover:opacity-90 transition-opacity disabled:opacity-60"
+              >
+                {status === "loading" ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <ArrowRight className="w-4 h-4" />
+                  </>
+                )}
+              </button>
+
+              {status === "success" && (
+                <p className="text-sm text-primary">
+                  Thanks — your message was sent.
+                </p>
+              )}
+
+              {status === "error" && (
+                <p className="text-sm text-destructive">
+                  Something went wrong. Please try again or contact me directly.
+                </p>
+              )}
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   );
