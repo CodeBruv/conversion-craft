@@ -1,72 +1,73 @@
 import {
-  Compass,
-  LayoutDashboard,
-  Code2,
-  SlidersHorizontal,
-  CheckCircle2,
+  Search,
+  Component,
+  GitBranch,
+  TestTube2,
+  Rocket,
 } from "lucide-react";
 
 const steps = [
   {
-    icon: Compass,
-    title: "Define",
-    desc: "We get clear on your goal, your audience, and what the site needs to achieve.",
+    icon: Search,
+    title: "Understand",
+    desc: "Start with the product goal, user needs, requirements, and technical constraints.",
   },
   {
-    icon: LayoutDashboard,
+    icon: Component,
     title: "Structure",
-    desc: "I map a layout that’s simple, clear, and built to guide action.",
+    desc: "Break the interface into reusable components and account for the states and interactions the product needs.",
   },
   {
-    icon: Code2,
+    icon: GitBranch,
     title: "Build",
-    desc: "Fast, responsive development with performance and usability in mind.",
+    desc: "Implement responsive, maintainable interfaces and connect them to the required application logic and APIs.",
   },
   {
-    icon: SlidersHorizontal,
-    title: "Refine",
-    desc: "We test, adjust, and tighten everything so it feels smooth and intentional.",
+    icon: TestTube2,
+    title: "Test & Refine",
+    desc: "Test important flows and states, investigate issues, and refine accessibility, performance, and usability.",
   },
   {
-    icon: CheckCircle2,
-    title: "Launch",
-    desc: "You get a polished site that’s ready to go live and start working.",
+    icon: Rocket,
+    title: "Ship",
+    desc: "Deploy to production, verify the result, and continue improving the product based on real usage.",
   },
 ];
 
 const Process = () => (
   <section className="py-20 md:py-28 bg-surface">
-    <div className="container max-w-4xl">
-      
+    <div className="container max-w-5xl">
       <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-        Simple Process
+        How I Work
       </p>
 
       <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-        Clear steps. Fast turnaround. No confusion.
+        Understand the problem. Build carefully. Ship and improve.
       </h2>
 
-      <p className="text-muted-foreground max-w-2xl mb-12">
-        You always know what’s happening next. The process is structured to keep things moving 
-        without delays, overthinking, or endless revisions.
+      <p className="text-muted-foreground max-w-2xl mb-12 leading-relaxed">
+        I take a practical approach to development: understand what needs to be
+        built, keep the implementation clear, test important states, and improve
+        the product based on what actually happens in use.
       </p>
 
       <div className="grid md:grid-cols-5 gap-6">
         {steps.map((step, i) => (
           <div
             key={step.title}
-            className="group p-4 rounded-xl border border-border hover:shadow-sm transition"
+            className="group p-4 rounded-xl border border-border hover:shadow-sm transition-shadow"
           >
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-7 h-7 rounded-md bg-primary/10 flex items-center justify-center">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center">
                 <step.icon className="w-4 h-4 text-primary" />
               </div>
+
               <span className="text-xs font-semibold text-primary">
-                {i + 1}.
+                {String(i + 1).padStart(2, "0")}
               </span>
             </div>
 
-            <h3 className="text-sm font-semibold text-foreground mb-1">
+            <h3 className="text-sm font-semibold text-foreground mb-2">
               {step.title}
             </h3>
 
