@@ -1,73 +1,81 @@
 import {
-  Timer,
-  Braces,
+  Code2,
   Smartphone,
-  Activity,
+  Gauge,
+  TestTube2,
+  Database,
   MessageCircle,
 } from "lucide-react";
 
 const points = [
   {
-    icon: Timer,
-    title: "Fast Turnaround",
-    desc: "Most projects go live within 3–7 days without dragging things out.",
-  },
-  {
-    icon: Braces,
-    title: "Clean, Scalable Code",
-    desc: "Built properly from the start so you’re not stuck fixing things later.",
+    icon: Code2,
+    title: "Product-Focused Development",
+    desc: "I build interfaces as part of working products, thinking about application state, user flows, edge cases, and maintainable code.",
   },
   {
     icon: Smartphone,
-    title: "Works Everywhere",
-    desc: "Your site looks and feels right on mobile, tablet, and desktop.",
+    title: "Responsive by Default",
+    desc: "Interfaces are designed and implemented to work properly across mobile, tablet, and desktop rather than treating mobile as an afterthought.",
   },
   {
-    icon: Activity,
-    title: "Built for Performance",
-    desc: "Fast load times, smooth interaction, and strong technical foundation.",
+    icon: Gauge,
+    title: "Performance Mindset",
+    desc: "I pay attention to JavaScript execution, rendering, Core Web Vitals, resource usage, and the factors that affect how an application feels.",
+  },
+  {
+    icon: TestTube2,
+    title: "Testing & Debugging",
+    desc: "I use testing, browser tooling, logs, and systematic investigation to identify problems and verify that fixes actually work.",
+  },
+  {
+    icon: Database,
+    title: "Beyond the Frontend",
+    desc: "Alongside React and Next.js, I have practical experience with APIs, authentication, PostgreSQL, server-side operations, and deployment.",
   },
   {
     icon: MessageCircle,
-    title: "No Confusion",
-    desc: "Clear communication, clear direction, and no unnecessary back and forth.",
+    title: "Clear Communication",
+    desc: "I can explain technical problems clearly, work through requirements, and communicate progress without unnecessary complexity.",
   },
 ];
 
 const WhyMe = () => (
   <section className="py-20 md:py-28 bg-background">
-    <div className="container max-w-4xl">
-      
+    <div className="container max-w-5xl">
       <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-        Why Work With Me
+        What I Bring
       </p>
 
       <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-        This is built to be simple, fast, and actually useful.
+        I care about how the product works, not just how the interface looks.
       </h2>
 
-      <p className="text-muted-foreground max-w-2xl mb-10">
-        Most websites look fine but don’t do anything. They’re slow, unclear, or overloaded.
-        I keep things focused so your visitors understand quickly and take action without hesitation.
+      <p className="text-muted-foreground max-w-2xl mb-10 leading-relaxed">
+        My work sits at the intersection of frontend development, product
+        thinking, and practical problem-solving. I enjoy taking an unclear
+        problem, understanding what needs to happen, and turning it into a
+        working interface.
       </p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {points.map((p) => (
+        {points.map((point) => (
           <div
-            key={p.title}
-            className="group bg-surface rounded-xl p-5 border border-border hover:shadow-md transition"
+            key={point.title}
+            className="group bg-surface rounded-xl p-5 border border-border hover:shadow-md transition-shadow"
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center group-hover:scale-105 transition">
-                <p.icon className="w-4 h-4 text-primary" />
+              <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <point.icon className="w-4 h-4 text-primary" />
               </div>
+
               <span className="text-sm font-semibold text-foreground">
-                {p.title}
+                {point.title}
               </span>
             </div>
 
             <p className="text-xs text-muted-foreground leading-relaxed">
-              {p.desc}
+              {point.desc}
             </p>
           </div>
         ))}
