@@ -2,7 +2,7 @@
 slug: "cookedbyjulz"
 title: "CookedByJulz"
 category: "Content Brand Landing Page"
-status: "published"
+status: "draft"
 featured: false
 order: 6
 summary: "Designed to turn scattered ideas into a clear and structured content direction"
