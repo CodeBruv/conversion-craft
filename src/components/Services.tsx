@@ -53,7 +53,7 @@ const Services = () => (
 
       <p className="text-muted-foreground max-w-2xl mb-12 leading-relaxed">
         I focus on building web experiences that are responsive, maintainable,
-        accessible, and connected to real application logic — not just pages
+        accessible, and connected to real application logic, not just pages
         that look good in a screenshot.
       </p>
 
