@@ -1,29 +1,24 @@
 import ProjectCard from "@/components/ProjectCard";
 import { getAllPublished } from "@/content/loader";
 
-/**
- * The work grid.
- *
- * This file used to be the project database. It is now integration code: it asks
- * the content loader for published projects and hands each one to ProjectCard.
- * Adding a project means adding a content file, never editing this component.
- *
- * Only published projects are listed, in development as well as production, so
- * the local homepage always matches the live one. Drafts are reached from /admin
- * or by their own URL while running locally.
- */
 const Projects = () => {
   const projects = getAllPublished();
 
   return (
     <section id="work" className="py-20 md:py-28 bg-surface">
       <div className="container max-w-6xl">
+        <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+          Selected Work
+        </p>
+
         <h2 className="text-2xl md:text-3xl font-bold mb-4">
-          Selected Work, Including Concept Builds.
+          Things I’ve built to solve real problems.
         </h2>
 
-        <p className="text-muted-foreground max-w-2xl mb-12">
-          Each project is designed with the goal to make it easy for visitors to understand, trust, and take action.
+        <p className="text-muted-foreground max-w-2xl mb-12 leading-relaxed">
+          From publicly launched products to work exploring a particular
+          problem or experience, each project shows how I think through a
+          problem, make product decisions, and turn ideas into working software.
         </p>
 
         {projects.length === 0 ? (

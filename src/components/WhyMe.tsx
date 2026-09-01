@@ -1,42 +1,42 @@
 import {
-  Code2,
+  Lightbulb,
+  Layers3,
   Smartphone,
   Gauge,
-  TestTube2,
-  Database,
+  Bug,
   MessageCircle,
 } from "lucide-react";
 
 const points = [
   {
-    icon: Code2,
-    title: "Product-Focused Development",
-    desc: "I build interfaces as part of working products, thinking about application state, user flows, edge cases, and maintainable code.",
+    icon: Lightbulb,
+    title: "Start With the Problem",
+    desc: "I don't begin by choosing a technology. I first try to understand what needs to happen, who it affects, and what a successful solution should look like.",
+  },
+  {
+    icon: Layers3,
+    title: "Think Beyond the Screen",
+    desc: "A good interface is only part of a product. I think through the flows, data, states, edge cases, and systems that need to work behind it.",
   },
   {
     icon: Smartphone,
-    title: "Responsive by Default",
-    desc: "Interfaces are designed and implemented to work properly across mobile, tablet, and desktop rather than treating mobile as an afterthought.",
+    title: "Build for Real Use",
+    desc: "I design and build experiences that hold up across devices and real-world usage, not just polished screens that look good in a demo.",
   },
   {
     icon: Gauge,
-    title: "Performance Mindset",
-    desc: "I pay attention to JavaScript execution, rendering, Core Web Vitals, resource usage, and the factors that affect how an application feels.",
+    title: "Care About the Details",
+    desc: "Performance, accessibility, responsiveness, loading states, and the small interactions that make software feel reliable all matter to me.",
   },
   {
-    icon: TestTube2,
-    title: "Testing & Debugging",
-    desc: "I use testing, browser tooling, logs, and systematic investigation to identify problems and verify that fixes actually work.",
-  },
-  {
-    icon: Database,
-    title: "Beyond the Frontend",
-    desc: "Alongside React and Next.js, I have practical experience with APIs, authentication, PostgreSQL, server-side operations, and deployment.",
+    icon: Bug,
+    title: "Investigate, Don't Guess",
+    desc: "When something isn't working, I break the problem down, trace the cause, test assumptions, and verify the fix rather than patching symptoms.",
   },
   {
     icon: MessageCircle,
-    title: "Clear Communication",
-    desc: "I can explain technical problems clearly, work through requirements, and communicate progress without unnecessary complexity.",
+    title: "Communicate Clearly",
+    desc: "I can work through unclear requirements, explain technical decisions in plain language, and keep people informed as the work moves forward.",
   },
 ];
 
@@ -44,18 +44,17 @@ const WhyMe = () => (
   <section className="py-20 md:py-28 bg-background">
     <div className="container max-w-5xl">
       <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-        What I Bring
+        How I Work
       </p>
 
       <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-        I care about how the product works, not just how the interface looks.
+        I care about solving the right problem, not just building the thing.
       </h2>
 
       <p className="text-muted-foreground max-w-2xl mb-10 leading-relaxed">
-        My work sits at the intersection of frontend development, product
-        thinking, and practical problem-solving. I enjoy taking an unclear
-        problem, understanding what needs to happen, and turning it into a
-        working interface.
+        Good software starts with understanding. I like taking an unclear
+        problem, working out what actually needs to happen, and then turning
+        that understanding into something useful, reliable, and built to last.
       </p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">

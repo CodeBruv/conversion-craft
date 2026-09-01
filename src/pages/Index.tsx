@@ -11,10 +11,10 @@ const Index = () => (
   <main>
     <Navbar />
     <Hero />
+    <WhyMe />
     <Projects />
     <Services />
     <Process />
-    <WhyMe />
     <FinalCTA />
     <Footer />
   </main>

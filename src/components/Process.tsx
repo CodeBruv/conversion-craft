@@ -10,27 +10,27 @@ const steps = [
   {
     icon: Search,
     title: "Understand",
-    desc: "Start with the product goal, user needs, requirements, and technical constraints.",
+    desc: "Clarify the goal, the people using the product, what needs to happen, and the constraints before writing code.",
   },
   {
     icon: Component,
-    title: "Structure",
-    desc: "Break the interface into reusable components and account for the states and interactions the product needs.",
+    title: "Shape",
+    desc: "Turn the problem into clear user flows, interfaces, components, states, and interactions that make sense together.",
   },
   {
     icon: GitBranch,
     title: "Build",
-    desc: "Implement responsive, maintainable interfaces and connect them to the required application logic and APIs.",
+    desc: "Implement the solution with maintainable code, responsive behavior, real application logic, and the integrations it needs.",
   },
   {
     icon: TestTube2,
-    title: "Test & Refine",
-    desc: "Test important flows and states, investigate issues, and refine accessibility, performance, and usability.",
+    title: "Refine",
+    desc: "Test important paths, investigate problems, and improve usability, accessibility, performance, and reliability.",
   },
   {
     icon: Rocket,
     title: "Ship",
-    desc: "Deploy to production, verify the result, and continue improving the product based on real usage.",
+    desc: "Put the product in the hands of real users, verify that it works as intended, and keep improving from there.",
   },
 ];
 
@@ -38,17 +38,16 @@ const Process = () => (
   <section className="py-20 md:py-28 bg-surface">
     <div className="container max-w-5xl">
       <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-        How I Work
+        My Process
       </p>
 
       <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-        Understand the problem. Build carefully. Ship and improve.
+        From a problem worth solving to something people can use.
       </h2>
 
       <p className="text-muted-foreground max-w-2xl mb-12 leading-relaxed">
-        I take a practical approach to development: understand what needs to be
-        built, keep the implementation clear, test important states, and improve
-        the product based on what actually happens in use.
+        I keep the process practical: understand what matters, shape the right
+        solution, build it carefully, test it in real conditions, and ship it.
       </p>
 
       <div className="grid md:grid-cols-5 gap-6">

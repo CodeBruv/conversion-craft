@@ -74,29 +74,30 @@ const FinalCTA = () => {
       <div className="container max-w-4xl">
         <div className="max-w-2xl mb-10">
           <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-            Get In Touch
+            Let’s Talk
           </p>
 
           <h2 className="text-2xl md:text-4xl font-bold mb-4">
-            Have a product, interface, or problem worth building?
+            Have a problem worth solving?
           </h2>
 
           <p className="text-secondary-foreground/70 text-lg leading-relaxed">
-            I’m open to frontend engineering opportunities, product
-            collaborations, and selected development projects involving React,
-            Next.js, and TypeScript.
+            Whether you’re building a product, improving an existing one, or
+            facing a problem that technology could solve, tell me what you’re
+            working on. I’m always open to exploring the right way to approach
+            it.
           </p>
         </div>
 
         <div className="grid md:grid-cols-[1fr_1.4fr] gap-8 items-start">
           <div className="space-y-6">
             <div>
-              <h3 className="font-semibold mb-2">What I'm looking for</h3>
+              <h3 className="font-semibold mb-2">What happens next?</h3>
 
               <p className="text-sm text-secondary-foreground/60 leading-relaxed">
-                Remote frontend engineering work where I can contribute to real
-                products, work with a strong team, and continue growing through
-                meaningful engineering problems.
+                Tell me what you’re trying to achieve, what isn’t working, or
+                what you have in mind. We can start with the problem and figure
+                out the right solution from there.
               </p>
             </div>
 
@@ -150,7 +151,7 @@ const FinalCTA = () => {
 
               <textarea
                 name="message"
-                placeholder="Tell me a little about the role, product, or project..."
+                placeholder="What are you trying to build, improve, or solve?"
                 rows={5}
                 value={form.message}
                 onChange={handleChange}
@@ -170,7 +171,7 @@ const FinalCTA = () => {
                   </>
                 ) : (
                   <>
-                    Send Message
+                    Start a Conversation
                     <ArrowRight className="w-4 h-4" />
                   </>
                 )}

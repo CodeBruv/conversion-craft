@@ -5,18 +5,17 @@ const Hero = () => (
     <div className="container max-w-5xl py-20 md:py-28">
       <div className="max-w-3xl">
         <p className="text-sm md:text-base font-semibold tracking-wide text-primary mb-5">
-          FRONTEND ENGINEER · REACT · NEXT.JS · TYPESCRIPT
+          SOFTWARE ENGINEER · PRODUCT BUILDER
         </p>
 
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight mb-6">
-          I build web products that are clear, responsive, and built to ship.
+          I turn problems into digital products people can actually use.
         </h1>
 
         <p className="text-lg md:text-xl text-secondary-foreground/70 max-w-2xl mb-10 leading-relaxed">
-          I build production web applications and interfaces with React,
-          Next.js, TypeScript, and modern web technologies. I care about the
-          details that make products feel good to use, responsive behavior,
-          accessibility, performance, and reliable application state.
+          I design and build modern web applications from the ground up,
+          combining product thinking with strong frontend engineering to turn
+          ideas, workflows, and real-world problems into useful software.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -32,7 +31,7 @@ const Hero = () => (
             href="#contact"
             className="inline-flex items-center justify-center gap-2 border border-secondary-foreground/20 text-secondary-foreground px-6 py-3.5 rounded-lg font-semibold hover:bg-secondary-foreground/5 transition-colors"
           >
-            Get In Touch
+            Start a Conversation
           </a>
         </div>
 
@@ -57,7 +56,7 @@ const Hero = () => (
             LinkedIn
           </a>
 
-          <span>Based in Nigeria · Open to remote work</span>
+          <span>Based in Nigeria · Open to remote opportunities</span>
         </div>
       </div>
     </div>

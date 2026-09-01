@@ -10,33 +10,33 @@ import {
 const capabilities = [
   {
     icon: PanelsTopLeft,
-    title: "Product Interfaces",
-    desc: "Responsive interfaces built with React, Next.js, and TypeScript, with careful attention to layout, interaction, and application state.",
+    title: "Web Applications",
+    desc: "Modern, responsive applications built with React, Next.js, and TypeScript, from interfaces and user flows to application state and interactions.",
   },
   {
     icon: Database,
-    title: "Data & API Integration",
-    desc: "Connect frontend experiences to APIs and databases while handling loading, error, empty, and edge states cleanly.",
+    title: "Data & Integrations",
+    desc: "Connect products to APIs, databases, authentication, and external services while handling real-world loading, error, empty, and edge states.",
   },
   {
     icon: Gauge,
     title: "Performance",
-    desc: "Identify unnecessary JavaScript, rendering costs, layout shifts, and other issues that affect real-world page performance.",
+    desc: "Build and improve experiences with attention to rendering, JavaScript execution, Core Web Vitals, resource usage, and perceived speed.",
   },
   {
     icon: Accessibility,
-    title: "Accessibility",
-    desc: "Semantic, keyboard-friendly interfaces with accessibility considered as part of implementation rather than an afterthought.",
+    title: "Accessible Experiences",
+    desc: "Semantic, keyboard-friendly interfaces designed to remain usable across different devices, abilities, and ways of interacting with the web.",
   },
   {
     icon: GitBranch,
-    title: "Testing & Debugging",
-    desc: "Use automated testing, browser tooling, and systematic debugging to find regressions and resolve problems across development and production.",
+    title: "Testing & Reliability",
+    desc: "Use automated tests, browser tooling, and systematic debugging to catch regressions, investigate problems, and make changes with confidence.",
   },
   {
     icon: Server,
-    title: "Full-Stack Understanding",
-    desc: "Frontend-focused development backed by practical experience with Node.js, PostgreSQL, authentication, server actions, and deployment.",
+    title: "End-to-End Understanding",
+    desc: "Frontend-focused engineering backed by practical experience with Node.js, PostgreSQL, authentication, server actions, and deployment.",
   },
 ];
 
@@ -44,17 +44,18 @@ const Services = () => (
   <section className="py-20 md:py-28 bg-background">
     <div className="container max-w-5xl">
       <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-        What I Build
+        Technical Capabilities
       </p>
 
       <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-        Frontend work with the product behind the interface in mind.
+        Strong frontend engineering, with enough depth to understand the whole product.
       </h2>
 
       <p className="text-muted-foreground max-w-2xl mb-12 leading-relaxed">
-        I focus on building web experiences that are responsive, maintainable,
-        accessible, and connected to real application logic, not just pages
-        that look good in a screenshot.
+        My strongest area is frontend engineering, but I work with an
+        understanding of the systems around the interface. That lets me build
+        features with the data, APIs, performance, reliability, and deployment
+        concerns in mind.
       </p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
