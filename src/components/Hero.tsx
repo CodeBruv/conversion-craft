@@ -56,7 +56,7 @@ const Hero = () => (
             LinkedIn
           </a>
 
-          <span>Based in Nigeria · Open to remote opportunities</span>
+          <span>Open to remote opportunities</span>
         </div>
       </div>
     </div>
