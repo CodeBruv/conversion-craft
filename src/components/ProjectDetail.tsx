@@ -2,7 +2,6 @@ import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
-import { WHATSAPP_NUMBER } from "@/config/site";
 import type { Project } from "@/content/schema";
 
 /**
@@ -17,8 +16,10 @@ interface ProjectDetailProps {
   project: Project;
 }
 
-const whatsAppLink = (project: Project) =>
-  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+const emailLink = (project: Project) =>
+  `mailto:abdooolmajeeed@gmail.com?subject=${encodeURIComponent(
+    "I want something like this",
+  )}&body=${encodeURIComponent(
     `Hi, I saw your ${project.title} project.\n\nI want something similar.`,
   )}`;
 
@@ -133,7 +134,7 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
           </Button>
         )}
         <Button variant="outline" className="w-full" asChild>
-          <a href={whatsAppLink(project)} target="_blank" rel="noreferrer">
+          <a href={emailLink(project)}>
             I Want Something Like This
           </a>
         </Button>

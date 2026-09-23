@@ -5,9 +5,6 @@
  * business, not a portfolio project.
  */
 
-/** WhatsApp contact number used by project enquiry links. */
-export const WHATSAPP_NUMBER = "+2348142971640";
-
 /** Brand name used in document titles. */
 export const SITE_NAME = "Code Bruv Technologies";
 

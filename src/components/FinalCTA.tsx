@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { ArrowRight, Github, Linkedin, Loader2 } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Loader2, Mail } from "lucide-react";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xgopkbro";
-const WHATSAPP_NUMBER = "+2348142971640";
+const EMAIL_ADDRESS = "abdooolmajeeed@gmail.com";
 
 const FinalCTA = () => {
   const [form, setForm] = useState({
@@ -19,15 +19,6 @@ const FinalCTA = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const generateWhatsAppMessage = () => {
-    return encodeURIComponent(
-      `Hi Abdulmajid,\n\n` +
-        `Name: ${form.name}\n` +
-        `Email: ${form.email}\n\n` +
-        `Message:\n${form.message}`
-    );
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -52,9 +43,6 @@ const FinalCTA = () => {
       }
 
       setStatus("success");
-
-      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${generateWhatsAppMessage()}`;
-      window.open(whatsappUrl, "_blank");
 
       setForm({
         name: "",
@@ -102,6 +90,14 @@ const FinalCTA = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
+              <a
+                href={`mailto:${EMAIL_ADDRESS}`}
+                className="inline-flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
+              >
+                <Mail className="w-4 h-4" />
+                Email
+              </a>
+
               <a
                 href="https://github.com/CodeBruv"
                 target="_blank"
@@ -185,7 +181,7 @@ const FinalCTA = () => {
 
               {status === "error" && (
                 <p className="text-sm text-destructive">
-                  Something went wrong. Please try again or contact me directly.
+                  Something went wrong. Please try again or email me directly.
                 </p>
               )}
             </div>
