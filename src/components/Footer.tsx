@@ -19,14 +19,14 @@ const Footer = () => (
           Email
         </a>
 
-        <a
+        {/* <a
           href="https://www.linkedin.com/in/abdulmajid-abubakar-hussain-313311138"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-secondary-foreground transition-colors"
         >
           LinkedIn
-        </a>
+        </a> */}
 
         <a
           href="https://github.com/CodeBruv"
