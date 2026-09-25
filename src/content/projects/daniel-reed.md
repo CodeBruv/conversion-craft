@@ -3,8 +3,8 @@ slug: "daniel-reed"
 title: "Daniel Reed"
 category: "Personal Brand Landing Page"
 status: "published"
-featured: false
-order: 3
+featured: true
+order: 5
 summary: "Focused on turning attention into action instead of passive scrolling"
 context: "Productivity coach"
 problem: "Visitors had no clear next step, leading to lost leads"
