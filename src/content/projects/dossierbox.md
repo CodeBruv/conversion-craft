@@ -4,7 +4,7 @@ title: "DossierBox"
 category: "Career Document Platform"
 status: "published"
 featured: true
-order: 1
+order: 3
 date: "2026-08-27"
 summary: "A mobile-first career-document platform built around a reusable professional Dossier that users can turn into tailored application documents."
 context: "DossierBox is built around the idea that people should not have to repeatedly recreate their career information for every application. Instead, a reusable Dossier acts as the source of truth for professional information, which can then support different application documents and variants."
