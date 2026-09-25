@@ -4,7 +4,7 @@ title: "Elbi Homes"
 category: "Real Estate Landing Page"
 status: "published"
 featured: false
-order: 1
+order: 3
 summary: "Built to remove hesitation and make property inquiries feel easy and natural"
 context: "Real estate company based in Birmingham, England"
 problem: "Listings were scattered and didn’t build enough trust to convert visitors into inquiries"
