@@ -3,8 +3,8 @@ slug: "sprintflow"
 title: "SprintFlow"
 category: "SaaS Landing Page"
 status: "published"
-featured: false
-order: 2
+featured: true
+order: 4
 summary: "Designed to make the product clear within seconds of landing"
 context: "Remote team collaboration tool"
 problem: "Users were confused by too many features and unclear messaging"
