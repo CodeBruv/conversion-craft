@@ -2,9 +2,9 @@
 slug: "growthforge"
 title: "GrowthForge"
 category: "Agency Website"
-status: "draft"
-featured: false
-order: 4
+status: "published"
+featured: true
+order: 5
 summary: "Positioned to feel credible and performance-driven from the first scroll"
 context: "Digital marketing agency"
 problem: "Weak positioning made the agency blend in with competitors"
