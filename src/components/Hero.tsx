@@ -46,7 +46,7 @@ const Hero = () => (
             GitHub
           </a>
 
-          <a
+          {/* <a
             href="https://www.linkedin.com/in/abdulmajid-abubakar-hussain-313311138"
             target="_blank"
             rel="noreferrer"
@@ -54,7 +54,7 @@ const Hero = () => (
           >
             <Linkedin className="w-4 h-4" />
             LinkedIn
-          </a>
+          </a> */}
 
           <span>Open to remote opportunities</span>
         </div>
