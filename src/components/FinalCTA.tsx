@@ -108,7 +108,7 @@ const FinalCTA = () => {
                 GitHub
               </a>
 
-              <a
+              {/* <a
                 href="https://www.linkedin.com/in/abdulmajid-abubakar-hussain-313311138"
                 target="_blank"
                 rel="noreferrer"
@@ -116,7 +116,7 @@ const FinalCTA = () => {
               >
                 <Linkedin className="w-4 h-4" />
                 LinkedIn
-              </a>
+              </a> */}
             </div>
           </div>
 
