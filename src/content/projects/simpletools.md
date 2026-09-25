@@ -4,7 +4,7 @@ title: "SimpleTools"
 category: "Browser-Based Utility Platform"
 status: "published"
 featured: true
-order: 1
+order: 2
 date: "2026-08-13"
 summary: "A browser-based utility platform that lets users perform common file and developer tasks directly in the browser."
 context: "SimpleTools was built around a simple idea: many everyday file and developer tasks do not need to send user data to a server. The platform uses browser capabilities to perform supported operations locally while keeping the experience simple and accessible."
